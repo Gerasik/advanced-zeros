@@ -1,4 +1,4 @@
-module.exports = function getZerosCount(number,base){
+function getPrimitives(number,base){
     var maxMin = [];
     var primitive = [];
     var resCount = [];
@@ -18,8 +18,8 @@ module.exports = function getZerosCount(number,base){
         i++;
     }};
     for(var j=0; j<resCount.length; j++){
-        maxMin.push(Math.floor(calcAll(number, primitive[j])/resCount[j]));
-        console.log(Math.floor(calcAll(number, primitive[j])/resCount[j]));
+        maxMin.push(calcAll(number, primitive[j])/resCount[j]);
+        console.log(calcAll(number, primitive[j])/resCount[j]);
     } ;
     maxMin.push(calcAll(number, 5));    
     var result = maxMin[0];
@@ -31,6 +31,8 @@ module.exports = function getZerosCount(number,base){
     return result;
 }
 
+var geras = getPrimitives(10,10);
+console.log('result = '+geras);
 
 function calcAll(number, base){
     var result = 0;
@@ -41,3 +43,5 @@ function calcAll(number, base){
     } 
     return result;
 };
+
+
